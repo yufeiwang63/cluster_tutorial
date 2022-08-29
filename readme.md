@@ -2,7 +2,7 @@
 This repo contains a minimal working example of using chester, a pacakge developed by lan PhD alumni Xingyu Lin, to easily launch multiple jobs from your local desktop/labtop to the lab cluster SEUSS. For a basic understanding of SEUSS, check our lab's wiki page: https://github.com/r-pad/wiki/wiki/Cluster%3A-Onboarding.
 
 ## How does chester work?
-The SEUSS cluster uses a job allocation system named [`slurm`](https://github.com/r-pad/wiki/wiki/Cluster%3A-Onboarding#get-permissions-to-use-the-cluster)  to run jobs. To use the slurm system, one needs to write a [`sbatch`](https://github.com/r-pad/wiki/wiki/Cluster%3A-Running-jobs#step-3-use-sbatch-to-run-jobs) script to wrap the acutal program (e.g., a python script) you want to run, and submit the script to the slurm system. So without chester, what you will usually do for running jobs on SEUSS would be:
+The SEUSS cluster uses a job allocation system named [`slurm`](https://slurm.schedmd.com/documentation.html)  to run jobs. To use the slurm system, one needs to write a [`sbatch`](https://github.com/r-pad/wiki/wiki/Cluster%3A-Running-jobs#step-3-use-sbatch-to-run-jobs) script to wrap the acutal program (e.g., a python script) you want to run, and submit the script to the slurm system. So without chester, what you will usually do for running jobs on SEUSS would be:
 - copy your local code, e.g., via github or scp, from your local desktop/laptop to seuss.  
 - write a sbatch script that runs the desired code.  
 - submit the script to the slurm system.  
@@ -10,7 +10,7 @@ Chester takes care for you all these three steps so you no longer need to do the
 
 ## Instructions
 - Clone this repo.
-- Make sure you have an account on SEUSS. Please follow instructions here to obtain an account on the seuss cluster.
+- Make sure you have an account on SEUSS. Please follow instructions here to obtain an account on the seuss cluster: https://github.com/r-pad/wiki/wiki/Cluster%3A-Onboarding#get-permissions-to-use-the-cluster.
 - Modify the following variables in `chester/config.py`:
     - `SEUSS_HOME_FOLDER`: change to your home folder on seuss. Usually, this will be your andrew id.
     - `SEUSS_PROJECT_NAME`: change this to be the name of your project. A folder at `/home/your_andrew_id/projects/SEUSS_PROJECT_NAME` will be created to store your source code for the project (all code in the current folder will be copied to this directory on seuss). A folder at `/data/your_andrew_id/SEUSS_PROJECT_NAME/data/local/exp_prefix` will be created to store all outputs, logging of your experiments. For what `exp_prefix` means, keep reading.
