@@ -1,5 +1,5 @@
 # A quick tutorial of using chester to launch large-scale experiments on SEUSS cluster
-This repo contains a minimal working example of using chester, a pacakge developed by lan PhD alumni Xingyu Lin, to easily launch multiple jobs from your local desktop/labtop to the lab cluster SEUSS. For a basic understanding of SEUSS, check our lab's wiki page: https://github.com/r-pad/wiki/wiki/Cluster%3A-Onboarding.
+This repo contains a minimal working example of using chester, a pacakge developed by lab PhD alumni Xingyu Lin, to easily launch multiple jobs from your local desktop/labtop to the lab cluster SEUSS. For a basic understanding of SEUSS, check our lab's wiki page: https://github.com/r-pad/wiki/wiki/Cluster%3A-Onboarding.
 
 ## How does chester work?
 The SEUSS cluster uses a job allocation system named [`slurm`](https://slurm.schedmd.com/documentation.html)  to run jobs. To use the slurm system, one needs to write a [`sbatch`](https://github.com/r-pad/wiki/wiki/Cluster%3A-Running-jobs#step-3-use-sbatch-to-run-jobs) script to wrap the acutal program (e.g., a python script) you want to run, and submit the script to the slurm system. So without chester, what you will usually do for running jobs on SEUSS would be:
