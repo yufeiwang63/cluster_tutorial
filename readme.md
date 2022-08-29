@@ -1,12 +1,12 @@
 # A quick tutorial of using chester to launch large-scale experiments on SEUSS cluster
-This repo contains a minimal working example of using chester, a pacakge developed by lan PhD alumni Xingyu Lin, to easily launch multiple jobs from your local desktop/labtop to the lab cluster SEUSS.
+This repo contains a minimal working example of using chester, a pacakge developed by lan PhD alumni Xingyu Lin, to easily launch multiple jobs from your local desktop/labtop to the lab cluster SEUSS. For a basic understanding of SEUSS, check our lab's wiki page: https://github.com/r-pad/wiki/wiki/Cluster%3A-Onboarding.
 
 ## How does chester work?
-The SEUSS cluster uses a job allocation system named `slurm` to run jobs. To use the slurm system, one needs to write a slurm script to wrap the acutal program (e.g., a python script) you want to run, and submit the slurm script to the slurm system. So without chester, what you will usually do for running jobs on SEUSS would be:
+The SEUSS cluster uses a job allocation system named [`slurm`](https://github.com/r-pad/wiki/wiki/Cluster%3A-Onboarding#get-permissions-to-use-the-cluster)  to run jobs. To use the slurm system, one needs to write a [`sbatch`](https://github.com/r-pad/wiki/wiki/Cluster%3A-Running-jobs#step-3-use-sbatch-to-run-jobs) script to wrap the acutal program (e.g., a python script) you want to run, and submit the script to the slurm system. So without chester, what you will usually do for running jobs on SEUSS would be:
 - copy your local code, e.g., via github or scp, from your local desktop/laptop to seuss.  
-- write a slurm script that runs the desired code.  
+- write a sbatch script that runs the desired code.  
 - submit the script to the slurm system.  
-Chester takes care for you all these three steps so you no longer need to do these manually. Basically, by writing a custom launch file using chester (e.g., the `examples/launch.py`), this pacakge will automatically use rsync to synchronize your local code to seuss, generate the slurm script for running your code, and submit it to the slurm system. It will also dump the output and error to files so you can check the status of your job and do debugging. 
+Chester takes care for you all these three steps so you no longer need to do these manually. Basically, by writing a custom launch file using chester (e.g., the `examples/launch.py`), this pacakge will automatically use rsync to synchronize your local code to seuss, generate the sbatch script for running your code, and submit it to the slurm system. It will also dump the output and error to files so you can check the status of your job and do debugging. 
 
 ## Instructions
 - Clone this repo.
