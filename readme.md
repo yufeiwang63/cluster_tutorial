@@ -13,6 +13,12 @@ Chester takes care for you all these three steps so you no longer need to do the
 ## Instructions
 - Clone this repo.
 - Make sure you have an account on SEUSS. Please follow instructions here to obtain an account on the seuss cluster: https://github.com/r-pad/wiki/wiki/Cluster%3A-Onboarding#get-permissions-to-use-the-cluster.
+- Add seuss to your ssh config, which is usually located at `~/.ssh/config`. It should contains sth like this:
+```
+Host seuss
+	User your_seuss_user_id
+	Hostname seuss.ri.cmu.edu
+```
 - Modify the following variables in `chester/config.py`:
     - `SEUSS_HOME_FOLDER`: change to your home folder on seuss. Usually, this will be your andrew id.
     - `SEUSS_PROJECT_NAME`: change this to be the name of your project. A folder at `/home/SEUSS_HOME_FOLDER/projects/SEUSS_PROJECT_NAME` will be created to store your source code for the project (all code in the current folder of your labtop/desktop will be copied to this directory on seuss). A folder at `/data/SEUSS_HOME_FOLDER/SEUSS_PROJECT_NAME/data/local/exp_prefix` will be created to store all outputs, logging of your experiments. For what `exp_prefix` means, keep reading.
